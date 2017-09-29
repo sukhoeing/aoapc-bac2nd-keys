@@ -83,5 +83,3 @@ struct Rational {
 
 
 
-
-
