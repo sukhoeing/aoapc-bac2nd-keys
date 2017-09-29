@@ -16,7 +16,7 @@ E + 1 - V = {n \over 2} \sum_{i=1}^{n-2}(i(n-2-i)+1)-{n\over 4}\sum_{i=1}^{n-2}(
 ={n(n-1)(n^2-5n+18) \over 24}
 $$
 
-具体代码请参考[这里](https://github.com/sukhoeing/aoapc-bac2nd/blob/master/ch10/UVa10213.cpp "代码")。
+具体代码请参考[https://github.com/sukhoeing/aoapc-bac2nd/blob/master/ch10/UVa10213.cpp](https://github.com/sukhoeing/aoapc-bac2nd/blob/master/ch10/UVa10213.cpp "代码")。
 
 
 
