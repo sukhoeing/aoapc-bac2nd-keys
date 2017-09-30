@@ -16,6 +16,7 @@
 - [习题选解 第 3 章 比赛真题分类选解](03_regional/readme.md)
 
 ## 《经典》例题补充
+- [2.7 第 9 章动态规划初步](ch09_examples/ch09_add_examples.pdf)
 - [2.8 第 10 章数学概念与方法](ch10_examples/ch10_add_examples.pdf)
 ## 《经典》习题补充报告
 - [2.8 第 10 章数学概念与方法](ch10/ch10_add_keys.pdf)
