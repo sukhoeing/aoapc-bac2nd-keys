@@ -41,21 +41,20 @@ double dp(const string& s) {
     assert(s[0] == N);
     return d = 0;
   }
-  double p = 0, p2 = 0;
+  double e = 0, p = 0;
   _for(i, 0, k) {
     int ci = s[i];
-    p += ci * (ci - 1);
     _for(j, i + 1, k) {
       int cj = s[j];
       auto s2 = s;
       s2[i] = ci + cj, s2.erase(s2.begin() + j);
       sort(begin(s2), end(s2));
-      p2 += ci * cj * 2 * (dp(s2) + 1);
+      e += ci * cj * 2 * (dp(s2) + 1), p += ci * cj * 2;
     }
   }
-  p /= N * (N - 1), p2 /= N * (N - 1);
-  d = (p + p2) / (1 - p);
-  return d;
+  e /= (N * (N - 1)), p /= N * (N - 1);
+  // d = e + (1+d)*(1-p) = e + 1-p + (1-p)d -> d = e/p + (1-p)/p
+  return d = e / p + (1 - p) / p;
 }
 
 int main() {
@@ -73,4 +72,5 @@ int main() {
   }
   return 0;
 }
-// 2211999	3710	Interconnect	Accepted	C++11	0.206	2017-07-22 13:58:36
+// 2211999	3710	Interconnect	Accepted	C++11	0.206
+// 2017-07-22 13:58:36
