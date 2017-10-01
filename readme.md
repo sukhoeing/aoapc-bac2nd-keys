@@ -20,3 +20,7 @@
 - [2.8 第 10 章数学概念与方法](ch10_examples/ch10_add_examples.pdf)
 ## 《经典》习题补充报告
 - [2.8 第 10 章数学概念与方法](ch10/ch10_add_keys.pdf)
+
+## 比赛训练资源:
+
+- [NOIP训练资料](https://share.weiyun.com/aad343f936b00d6891ae64f7c64877d4)
