@@ -1,47 +1,67 @@
-// UVa1631 Locker, Tianjin 2012
+// UVa1631 Locker
 // 陈锋
+#include <bitset>
 #include <cassert>
-#include <cstring>
-#include <cstdio>
 #include <climits>
-#include <functional>
-#include <algorithm>
-#define _for(i,a,b) for(int i=(a); i<(b); ++i)
-#define _rep(i,a,b) for(int i=(a); i<=(b); ++i)
+#include <cstdio>
+#include <cstdlib>
+#include <cstring>
+#include <ctime>
+#include <iostream>
+#include <list>
+#include <queue>
+#include <set>
+#include <sstream>
+#include <unordered_map>
+#include <unordered_set>
+#include <valarray>
+#include <vector>
+
 using namespace std;
+#define _for(i, a, b) for (int i = (a); i < (b); ++i)
+#define _rep(i, a, b) for (int i = (a); i <= (b); ++i)
+#define _zero(D) memset((D), 0, sizeof(D))
+#define _init(D, v) memset((D), (v), sizeof(D))
+#define _ri1(x) scanf("%d", &(x))
+#define _ri2(x, y) scanf("%d%d", &(x), &(y))
+#define _ri3(x, y, z) scanf("%d%d%d", &(x), &(y), &(z))
+#define _ri4(a, b, c, d) scanf("%d%d%d%d", &(a), &(b), &(c), &(d))
+typedef long long LL;
+const int MAXN = 1000 + 4;
+int N;
+int D[MAXN][10][10][10];
+string S, T;
 
-const int MAXN = 1024, MAXD = 10, INF = 100000000;
-int DP[MAXN][MAXD][MAXD], N, A[MAXN], B[MAXN];
-char S1[MAXN], S2[MAXN];
-
-inline int Up(int x, int k){ return (x+k)%10; } // x向上拨k次能变成的数字
-inline int Down(int x, int k){ return (x-k+10)%10; } // x向下拨k次能变成的数字
-
-int main(){
-    while(scanf("%s%s", S1, S2) == 2){
-        N = strlen(S1);
-        _rep(i, 0, N) _for(x, 0, 10) _for(y, 0, 10) DP[i][x][y] = INF;
-        _for(i, 0, N) A[i+1] = S1[i]-'0', B[i+1] = S2[i]-'0';
-
-        A[0]=B[0]=A[N+1]=A[N+2]=B[N+1]=B[N+2]=0;
-        DP[0][A[1]][A[2]] = 0;
-        
-        _rep(i, 1, N) _for(x, 0, 10) _for(y, 0, 10){
-            int down = Down(x, B[i]); // 把x向下转成B[i]需要转几次
-            _rep(d1, 0, down) _rep(d2, 0, d1){ // d1:i+1位转几次，d2:i+2位转几次
-                int& d = DP[i][Down(y,d1)][Down(A[i+2],d2)];
-                d = min(DP[i-1][x][y]+down, d);                
-            }
-            int up = 10 - down; // 把x向上转成B[i]需要转几次
-            _rep(u1, 0, up) _rep(u2, 0, u1){ // u1:i+1位转几次，u2:i+2位转几次
-                int& d = DP[i][Up(y,u1)][Up(A[i+2],u2)];
-                d = min(DP[i-1][x][y]+up, d);                
-            }
-        }
-
-        printf("%d\n", DP[N][0][0]);
-    }
-    return 0;
+inline int up(int i, int c) { return (i + c) % 10; }
+inline int down(int i, int c) { return (i - c + 20) % 10; }
+/*
+  D(i, i0, i1, i2) -> cur i num in pos (i,i+1,i+2)  is i0,i1,i2
+*/
+int dp(int i, int i0, int i1, int i2) {
+  int &d = D[i][i0][i1][i2], ti = T[i] - '0',
+      s3 = i + 3 >= N ? 0 : S[i + 3] - '0';
+  if (d > -1) return d;
+  if (i == N - 1) return d = min((i0 - ti + 10) % 10, (ti - i0 + 10) % 10);
+  if (i0 == ti) return d = dp(i + 1, i1, i2, s3);
+  d = INT_MAX;
+  int kup = (ti - i0 + 10) % 10;  // steps of rotating up to T[i]
+  _rep(k1, 0, kup) _rep(k2, 0, k1) d =
+      min(d, kup + dp(i + 1, up(i1, k1), up(i2, k2), s3));
+  int kdown = (i0 - ti + 10) % 10;
+  _rep(k1, 0, kdown) _rep(k2, 0, k1) d =
+      min(d, kdown + dp(i + 1, down(i1, k1), down(i2, k2), s3));
+  return d;
 }
 
-// LiveArchive: 1463685	6384	Locker	Accepted	C++	0.129	2014-06-06 14:40:20
+int main() {
+  while (cin >> S >> T) {
+    while (S.size() < 3) S.push_back('0'), T.push_back('0');
+    N = S.size();
+    _init(D, -1);
+    int ans = dp(0, S[0] - '0', S[1] - '0', S[2] - '0');
+    printf("%d\n", ans);
+  }
+  return 0;
+}
+// 20189704	1631	Locker	Accepted	C++11	0.130	2017-10-17
+// 03:31:19

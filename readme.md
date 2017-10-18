@@ -20,6 +20,7 @@
 - [2.8 第 10 章数学概念与方法](ch10_examples/ch10_add_examples.pdf)
 ## 《经典》习题补充报告
 - [2.8 第 10 章数学概念与方法](ch10/ch10_add_keys.pdf)
+- [2.9 第 9 章动态规划初步](ch09/ch09_add_keys.pdf)
 
 ## 比赛训练资源:
 
