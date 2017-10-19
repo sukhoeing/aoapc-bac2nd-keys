@@ -12,5 +12,6 @@
 - 习题 4-9 数据 挖掘（ Data Mining, ACM/ ICPC NEERC 2003, UVa1591)
 - 习题 4-10 洪水！(Flooded! ACM/ICPC World Finals 1999, UVa815)
 
-## TODO
-- [ ] 习题4-9题解补充
+## 补充题解
+- [x] 习题 4-9 数据 挖掘（ Data Mining, ACM/ ICPC NEERC 2003, UVa1591)
+

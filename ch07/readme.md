@@ -18,8 +18,8 @@
 
 - [ ] 习题 7- 7 　 埃及分数（ Eg[ y] ptian Fractions (HARD version), Rujia Liu' s Present 6, UVa 12558）
 - [ ] 习题 7- 8 　 数字谜（ Digit Puzzle, ACM/ ICPC Xi' an 2006, UVa12107）
-- [ ] 习题 7-17 　Gokigen Naname 谜题（ Gokigen Naname, UVa11694）
 - [ ] 习题 7- 9 　 立体八数码问题（ Cubic Eight- Puzzle , ACM/ ICPC Japan 2006, UVa1604）
+- [x] 习题 7-17 　Gokigen Naname 谜题（ Gokigen Naname, UVa11694）
 
 ### 代码&题解
 
