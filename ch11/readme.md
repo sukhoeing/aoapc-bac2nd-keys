@@ -20,9 +20,9 @@
 
 ### 补充题解/证明
 - [ ] 习题 11-17 王国的道路图(Kingdom Roadmap, ACM/ICPC NEERC 2011, UVa1670) 
+- [ ] 习题11-10 Risk游戏(Risk, NWERC 2010, UVa12011)
 
 ### 代码&题解
-- [ ] 习题11-10 Risk游戏(Risk, NWERC 2010, UVa12011)
 - [ ] 习题11-13 最短路线(Walk, ACM/ICPC Jinhua 2012, UVa1666)
 - [ ] 习题11-15 绿色行动(Let's Go Green, ACM/ICPC Jakarta 2012, UVa1668)
 - [ ] 习题11-18 交通堵塞(Traffic Jam, ACM/ICPC Dhaka 2009, UVa12214)

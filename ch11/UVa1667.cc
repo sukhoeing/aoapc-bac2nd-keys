@@ -1,92 +1,78 @@
-// Network Mess, ACM/ICPC Tokyo 2005, UVa1667
+// UVa1667 Network Mess
 // 陈锋
+#include <bitset>
 #include <cassert>
+#include <climits>
 #include <cstdio>
-#include <algorithm>
+#include <cstdlib>
+#include <cstring>
+#include <ctime>
+#include <iostream>
+#include <list>
+#include <queue>
+#include <set>
 #include <sstream>
-#include <string>
+#include <unordered_map>
+#include <unordered_set>
+#include <valarray>
 #include <vector>
-#include <map>
-#define _for(i,a,b) for( int i=(a); i<(b); ++i)
-#define _rep(i,a,b) for( int i=(a); i<=(b); ++i)
-
-template<typename T>
-struct MemPool {
-    std::vector<T*> buf;
-    T* createNew() {
-        buf.push_back(new T());
-        return buf.back();
-    }
-    
-    void dispose() {
-        for(int i = 0; i < buf.size(); i++) delete buf[i];
-        buf.clear();
-    }
-};
-int readint() { int x; scanf("%d", &x); return x; }
 
 using namespace std;
-const int MAXN = 64;
-struct Node{ vector<Node*> nodes; };
-typedef Node* PNode;
-MemPool<Node> nodePool;
-vector<int> M[MAXN];
-int N, pa[MAXN];
-int getPa(int i) { return i == pa[i] ? i : (pa[i] = getPa(pa[i])); }
-
-// 建树, 叶子节点, 点到根节点的距离, 根节点指针, 父节点, 度数数组
-void buildTree(const vector<int>& leaves, vector<int>& dist, PNode root, PNode fa, vector<int>& degs) {
-    memset(pa, 0, sizeof(pa));
-    for(const auto l : leaves) pa[l] = l;
-
-    int isLeaf[MAXN]; // 直接的叶子
-    memset(isLeaf, 0, sizeof(isLeaf));
-
-    for(auto lit = begin(leaves); lit != end(leaves); lit++) {
-        int li = *lit;
-        if(dist[li] == 1) {  // 到根节点距离为1，就是直接的叶子节点
-            root->nodes.push_back(nodePool.createNew());
-            isLeaf[li] = 1;
-            continue;
-        }
-        for(auto rit = lit+1; rit != end(leaves); rit++){
-            int ri = *rit;
-            if(dist[ri] == 1) continue;
-            if(dist[li] + dist[ri] > M[li][ri]) pa[ri] = li; // 相同的子树
-        }
+#define _for(i, a, b) for (decltype(b) i = (a); i < (b); ++i)
+#define _rep(i, a, b) for (int i = (a); i <= (b); ++i)
+#define _zero(D) memset((D), 0, sizeof(D))
+#define _init(D, v) memset((D), (v), sizeof(D))
+#define _ri1(x) scanf("%d", &(x))
+#define _ri2(x, y) scanf("%d%d", &(x), &(y))
+#define _ri3(x, y, z) scanf("%d%d%d", &(x), &(y), &(z))
+#define _ri4(a, b, c, d) scanf("%d%d%d%d", &(a), &(b), &(c), &(d))
+typedef long long LL;
+const int MAXN = 50 + 2;
+int N, A[MAXN][MAXN], Pa[MAXN];
+vector<int> D;
+int find_pa(int u) { return u == Pa[u] ? u : (Pa[u] = find_pa(Pa[u])); }
+void solve(const vector<int>& G, int pa = -1) {
+  for (auto u : G) Pa[u] = u;
+  int deg = 1;  // internal node, parent
+  _for(ui, 0, G.size()) {
+    auto u = G[ui];
+    if (A[0][u] == 1) {
+      ++deg;
+      continue;
     }
-
-    for(auto i : leaves) dist[i]--;
-    map<int, vector<int> > subTrees; // 每颗子树
-    for(auto i : leaves) if(!isLeaf[i]) subTrees[getPa(i)].push_back(i);
-
-    for(const auto& p : subTrees){
-        root->nodes.push_back(nodePool.createNew());
-        buildTree(p.second, dist, root->nodes.back(), root, degs);
+    _for(vi, ui + 1, G.size()) {
+      int v = G[vi];
+      if (A[0][v] == 1) continue;
+      if (A[0][u] + A[0][v] > A[u][v]) Pa[v] = u;
     }
-    
-    if(fa && !root->nodes.empty()) degs.push_back(root->nodes.size() + 1);
+  }
+  unordered_map<int, vector<int>> SubTrees;
+  for (auto u : G) {
+    if (A[u][0] == 1) continue;  // u is direct child of root 0
+    SubTrees[find_pa(u)].push_back(u);
+  }
+  deg += SubTrees.size();
+  if (pa != -1) D.push_back(deg);
+  for (const auto& p : SubTrees) {
+    for (auto u : p.second) A[0][u]--, A[u][0]--;
+    solve(p.second, 0);
+  }
 }
 
-int main(){
-    while(scanf("%d", &N) == 1 && N){
-        _for(i, 0, N){
-            M[i].clear();
-            _for(j, 0, N) M[i].push_back(readint()); 
-        }
-        vector<int> leaves, dist(M[0].begin(), M[0].end()), degs;
-        _for(i, 1, N) leaves.push_back(i);
-
-        buildTree(leaves, dist, nodePool.createNew(), NULL, degs);
-        sort(degs.begin(), degs.end());
-        bool first = true;
-        for(auto d : degs){
-            if(first) first = false; else printf(" ");
-            printf("%d", d);
-        }
-        puts("");
-        nodePool.dispose();
-    }
-    return 0;
+void solve() {
+  D.clear();
+  vector<int> G;
+  _for(i, 1, N) G.push_back(i);
+  solve(G, -1);
 }
-// 16906647 1667    Network Mess    Accepted    C++11   0.000   2016-02-26 02:41:39
+
+int main() {
+  while (_ri1(N) == 1 && N) {
+    _for(i, 0, N) _for(j, 0, N) _ri1(A[i][j]);
+    solve();
+    sort(begin(D), end(D));
+    _for(i, 0, D.size()) printf("%d%c", D[i], i < D.size() - 1 ? ' ' : '\n');
+  }
+  return 0;
+}
+// 20226774 1667 Network Mess Accepted C++11 0.000 2017-10-23 02:35:52

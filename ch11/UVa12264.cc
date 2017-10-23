@@ -1,4 +1,4 @@
-// UVa1660 Cable TV Network
+// UVa12264 Risk
 // 陈锋
 #include <bitset>
 #include <cassert>
@@ -26,7 +26,11 @@ using namespace std;
 #define _ri2(x, y) scanf("%d%d", &(x), &(y))
 #define _ri3(x, y, z) scanf("%d%d%d", &(x), &(y), &(z))
 #define _ri4(a, b, c, d) scanf("%d%d%d%d", &(a), &(b), &(c), &(d))
+#define _rf1(x) scanf("%lf", &(x))
+#define _rf2(x, y) scanf("%lf%lf", &(x), &(y))
+
 typedef long long LL;
+
 struct Edge {
   int from, to, cap, flow;
 };
@@ -84,7 +88,7 @@ struct Dinic {
   int DFS(int x, int a) {
     if (x == t || a == 0) return a;
     int flow = 0, f;
-    for (int& i = cur[x]; i < (int)G[x].size(); i++) {
+    for (int& i = cur[x]; i < G[x].size(); i++) {
       Edge& e = edges[G[x][i]];
       if (d[x] + 1 == d[e.to] && (f = DFS(e.to, min(a, e.cap - e.flow))) > 0) {
         e.flow += f;
@@ -118,35 +122,43 @@ struct Dinic {
   }
 };
 
-const int MAXN = 50 + 2, INF = 0x7f7f7f7f;
-int N, M, G[MAXN][MAXN];
-Dinic<MAXN * 2 + 2, INF> D;
-vector<Edge> Es;
-int solve() {
-  if (N == 0) return 0;
-  if (N == 1) return 1;
-  int ans = N;
-  _for(i, 0, N) _for(j, 0, N) if (i != j) {
-    D.init(2 * N + 2);
-    _for(u, 0, N) D.AddEdge(u, u + N, 1);
-    for (const auto& e : Es)
-      D.AddEdge(e.from + N, e.to, INF), D.AddEdge(e.to + N, e.from, INF);
-    ans = min(ans, D.Maxflow(i + N, j));
+const int MAXN = 100 + 4, INF = 0x7f7f7f7f;
+int N, A[MAXN];
+char Map[MAXN][MAXN];
+Dinic<2 * MAXN, INF> solver;
+
+bool isOK(const int m) {
+  solver.init(N * 2 + 4);
+  int S = 2 * N, T = S + 1, sumF = 0;
+  _for(i, 0, N) if (A[i]) {
+    solver.AddEdge(i, i + N, INF), solver.AddEdge(S, i, A[i]);
+    int f = 1;
+    _for(j, 0, N) if (i != j && Map[i][j] == 'Y') {
+      if (A[j])
+        solver.AddEdge(i, j + N, INF);
+      else
+        f = m;
+    }
+    solver.AddEdge(i + N, T, f), sumF += f;
   }
-  return ans;
+  return solver.Maxflow(S, T) == sumF;  // Full Flow
 }
 
 int main() {
-  while (_ri2(N, M) == 2) {
-    Edge e;
-    Es.clear();
-    _for(i, 0, M) {
-      scanf(" (%d,%d)", &(e.from), &(e.to));
-      Es.push_back(e);
+  int T;
+  _ri1(T);
+  while (_ri1(N) == 1) {
+    int L = 0, R = 10;
+    _for(i, 0, N) _ri1(A[i]), R += A[i];
+    _for(i, 0, N) scanf("%s", Map[i]);
+    while (L + 1 < R) {  // L is always ok
+      int M = L + (R - L) / 2;
+      if (isOK(M)) L = M;
+      else R = M;
     }
-    int ans = solve();
-    printf("%d\n", ans);
+    printf("%d\n", L);
   }
+
   return 0;
 }
-// 20223820	1660 Cable TV Network Accepted C++11	0.100 2017-10-22 12:45:02
+// 20222567 12264 Risk Accepted C++11 0.010 2017-10-22 08:31:55
