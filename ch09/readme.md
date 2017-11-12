@@ -19,10 +19,10 @@
 ### 补充题解/证明
 
 ### 代码&题解
-- [x] 习题 9- 7 　 密码 锁（ Locker, Tianjin 2012, UVa1631）
+- [x] 习题 9- 7 　 密码锁（ Locker, Tianjin 2012, UVa1631）
 - [ ] 习题 9- 13 　 叠 盘子（ Stacking Plates, ACM/ ICPC World Finals 2012, UVa1289）
 - [ ] 习题 9- 16 　 野餐（ The Picnic, ACM/ ICPC NWERC 2002, UVa1634）
-- [ ] 习题 9- 17 　 佳 佳 的 筷子（ Chopsticks, UVa 10271）
+- [ ] 习题 9- 17 　 佳佳的筷子（ Chopsticks, UVa 10271）
 - [ ] 习题 9- 19 　 花环（ Garlands, ACM/ ICPC CERC 2009, UVa1443）
 - [ ] 习题 9- 20 　 山路（ Mountain Road, NWERC 2009, UVa12222）
 - [ ] 习题 9- 21 　 周期（ Period, ACM/ ICPC Seoul 2006, UVa1371）

@@ -23,8 +23,9 @@
 - [2.2 第 4 章 函数和递归](ch04/ch04_add_keys.pdf)
 - [2.6 第 7 章 暴力求解法](ch07/ch07_add_keys.pdf)
 - [2.5 第 8 章高效算法设计](ch08/ch08_add_keys.pdf)
-- [2.9 第 9 章动态规划初步](ch09/ch09_add_keys.pdf)
-- [2.8 第 10 章数学概念与方法](ch10/ch10_add_keys.pdf)
+- [2.6 第 9 章动态规划初步](ch09/ch09_add_keys.pdf)
+- [2.7 第 10 章数学概念与方法](ch10/ch10_add_keys.pdf)
+- [2.9 第 11 章图论模型与算法](ch11/ch11_add_keys.pdf)
 
 ## 比赛训练资源:
 
