@@ -26,6 +26,6 @@
 - [ ] 习题 9- 19 　 花环（ Garlands, ACM/ ICPC CERC 2009, UVa1443）
 - [ ] 习题 9- 20 　 山路（ Mountain Road, NWERC 2009, UVa12222）
 - [ ] 习题 9- 21 　 周期（ Period, ACM/ ICPC Seoul 2006, UVa1371）
-- [ ] 习题 9- 22 　 俄罗斯 套 娃（ Matryoshka, ACM/ ICPC World Finals 2013, UVa 1579）
+- [x] 习题 9- 22 　 俄罗斯 套 娃（ Matryoshka, ACM/ ICPC World Finals 2013, UVa 1579）
 - [ ] 习题 9- 23 　 优化最大值电路（ Minimizing Maximizer, ACM/ ICPC CERC 2003, UVa1322）
 

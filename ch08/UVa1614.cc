@@ -25,33 +25,23 @@ using namespace std;
 #define _ri4(a, b, c, d) scanf("%d%d%d%d", &(a), &(b), &(c), &(d))
 typedef long long LL;
 const int MAXN = 100000 + 4;
-int N, F[MAXN];
-struct Node {
-  int id, v;
-  bool operator<(const Node& rhs) const { return v > rhs.v; }
-};
-Node A[MAXN];
+int A[MAXN], N, F[MAXN];
 
 int main() {
   while (_ri1(N) == 1 && N) {
-    _for(i, 0, N) _ri1(A[i].v), A[i].id = i;
-    sort(A, A + N);
-    LL sum = 0;
-    F[A[0].id] = 1, sum = A[0].v;
-    _for(i, 1, N) {
-      auto a = A[i];
-      if (sum >= 0)
-        sum -= a.v, F[a.id] = -1;
-      else
-        sum += a.v, F[a.id] = 1;
-    }
-    if (sum == 0) {
-      puts("Yes");
-      _for(i, 0, N) printf("%d%s", F[i], (i == N - 1) ? "\n" : " ");
-    } else {
+    LL S = 0, T = 0;
+    _for(i, 0, N) _ri1(A[i]), S += A[i];
+    if (S % 2 == 1) {
       puts("No");
+      continue;
     }
+    puts("Yes");
+    for (int i = N - 1; i >= 0; i--) {
+      F[i] = 1;
+      if (2 * (T + A[i]) <= S) F[i] = -1, T += A[i];
+    }
+    _for(i, 0, N) printf("%d%s", F[i], i == N - 1 ? "\n" : " ");
   }
   return 0;
 }
-// 19965076	1614	Hell on the Markets	Accepted	C++11	0.180	2017-09-06 04:08:20
+// 20363675 1614 Hell on the Markets Accepted C++11 0.180 2017-11-18 13:19:14
