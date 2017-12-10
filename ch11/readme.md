@@ -20,7 +20,7 @@
 
 ### 补充题解/证明
 - [ ] 习题 11-17 王国的道路图(Kingdom Roadmap, ACM/ICPC NEERC 2011, UVa1670) 
-- [x] 习题11-10 Risk游戏(Risk, NWERC 2010, UVa12011)
+- [x] 习题11-10 Risk游戏(Risk, NWERC 2010, UVa12264)
 
 ### 代码&题解
 - [ ] 习题11-13 最短路线(Walk, ACM/ICPC Jinhua 2012, UVa1666)
