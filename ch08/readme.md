@@ -23,8 +23,8 @@
 - [x] 习题 8- 3 　 比特 变换器（ Bits Equalizer, SWERC 2012, UVa12545）
 - [ ] 习题 8- 7 　 生成 排列（ Generating Permutations, UVa11925）
 - [x] 习题 8- 9 　 K 度 图 的 着色（ K－Graph Oddity, ACM/ ICPC NEERC 2010, UVa1613）
-- [ ] 习题 8- 10 　 奇怪 的 股市（ Hell on the Markets, ACM/ ICPC NEERC 2008, UVa1614）
-- [ ] 习题 8- 12 　 顾客 是 上帝（ Keep the Customer Satisfied, ACM/ ICPC SWERC 2005, UVa1153）
+- [x] 习题 8- 10 　 奇怪 的 股市（ Hell on the Markets, ACM/ ICPC NEERC 2008, UVa1614）
+- [x] 习题 8- 12 　 顾客 是 上帝（ Keep the Customer Satisfied, ACM/ ICPC SWERC 2005, UVa1153）
 - [ ] 习题 8- 13 　 外星人 聚会（ Meeting with Aliens, UVa10570）
 - [ ] 习题 8- 15 　 笔记本（ Laptop, ACM/ ICPC Daejeon 2012, UVa1617）
 - [ ] 习题 8- 25 　 有向 图 D 和 E（ From D to E and back, UVa11175）
@@ -32,7 +32,7 @@
 ### 代码&题解
 
 - [ ] 习题 8- 20 　 懒惰的苏 珊（ Lazy Susan, ACM/ ICPC Danang 2007, UVa1620）
-- [ ] 习题 8- 21 　 跳来跳去（ Jumping Around, ACM/ ICPC NEERC 2012, UVa1621）
+- [x] 习题 8- 21 　 跳来跳去（ Jumping Around, ACM/ ICPC NEERC 2012, UVa1621）
 - [ ] 习题 8- 22 　 机器人（ Robot, ACM/ ICPC Beijing 2006, UVa1622）
 - [ ] 习题 8- 23 　 神龙喝水（ Enter the Dragon, ACM/ ICPC CERC 2010, UVa1623）
 - [ ] 习题 8- 27 　 海盗的宝箱（ Pirate Chest, ACM/ ICPC World Finals 2013, UVa1580）
