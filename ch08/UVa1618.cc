@@ -86,4 +86,4 @@ int main() {
     return 0;
 }
 
-// 1509123 3232 Weak Key Accepted C++ 0.089  2014-08-05 12:55:44 
+// 20497013 1618    Weak Key    Accepted    C++11   0.050   2017-12-16 11:45:09

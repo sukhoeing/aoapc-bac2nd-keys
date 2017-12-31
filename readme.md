@@ -42,3 +42,5 @@
 - NOI竞赛工具
 
 ### [《经典》UVa题目判题速度以及数据问题看这里!](misc/UVaTips.md)
+
+### [勘误](misc/errata.md)

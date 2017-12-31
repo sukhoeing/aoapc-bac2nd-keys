@@ -77,4 +77,4 @@ int main() {
     }
     return 0;
 }
-// LA 1512198 6279 Caravan Robbers Accepted C++ 0.142  2014-08-08 01:08:08 
+// 20497012 1616    Caravan Robbers Accepted    C++11   0.070   2017-12-16 11:44:52
