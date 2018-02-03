@@ -36,8 +36,7 @@ Room opRooms[10+1], reRooms[30+1];
 Patient pats[100+1];
 struct patComp {
     bool operator() (int i1, int i2) { 
-        const Patient& p1 = pats[i1]; 
-        const Patient& p2 = pats[i2];
+        const Patient &p1 = pats[i1], &p2 = pats[i2];
         assert(p1.opRoomId != -1 && p2.opRoomId != -1);
         return p1.opRoomId < p2.opRoomId;
     }
