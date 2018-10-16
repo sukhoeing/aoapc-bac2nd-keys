@@ -42,14 +42,13 @@
 
 ### 代码&题解
 - [ ] 习题10-22 飞机环球(Planes Around the World, UVa10640)
+- [ ] 习题10-29 名次表的变化(Fantasy Cricket, UVa11982)
 - [ ] 习题10-30 守卫(Guard, ACM/ICPC Dhaka 2011, UVa12371)
 - [ ] 习题10-31 守卫II(Guards II, ACM/ICPC Dhaka 2012, UVa12590)
 - [ ] 习题10-32 汉诺塔(Hanoi Towers, ACM/ICPC NEERC 2007, UVa1414)
 - [ ] 习题10-33 二元运算(Binary Operation, ACM/ICPC NEERC 2010, UVa1651)
 - [ ] 习题10-34 记住密码(Password Remembering, ACM/ICPC Dhaka 2009, UVa12212)
 - [ ] 习题10-36 Fibonacci进制(Fibonacci System, ACM/ICPC NEERC 2008, UVa1652)
-- [ ] 习题 10-29 名次表的变化(Fantasy Cricket, UVa11982)
-- [ ] 习题 10-30 守卫(Guard, ACM/ICPC Dhaka 2011, UVa12371)
 - [ ] 习题 10-41 整数序列(A Sequence of Numbers, ACM/ICPC Chengdu 2007, UVa1406)
 - [ ] 习题 10-44 选整数（ K- Multiple Free Set, UVa11246）
 - [ ] 习题 10-45 带符号二进制（ Power Signs, UVa11166）
