@@ -33,6 +33,7 @@
 - 习题 10-40 实验法计算概率(Probability Through Experiments, ACM/ICPC Hatyai 2012, UVa12535)
 - 习题 10-42 网格中的三角形(Triangles in the Grid, UVa12508)
 - 习题 10-43 整数对(Pair of Integers, ACM/ICPC NEERC 2001, UVa1654)
+- 习题 10-44 选整数(K-Multiple Free Set, UVa11246)
 - 习题 10-46 抽奖(Honorary Tickets, UVa11895)
 - 习题 10-48 考试(Exam, ACM/ ICPC Chengdu 2012, UVa1655)
 
@@ -50,7 +51,6 @@
 - [ ] 习题 10-34 记住密码(Password Remembering, ACM/ICPC Dhaka 2009, UVa12212)
 - [ ] 习题 10-36 Fibonacci进制(Fibonacci System, ACM/ICPC NEERC 2008, UVa1652)
 - [ ] 习题 10-41 整数序列(A Sequence of Numbers, ACM/ICPC Chengdu 2007, UVa1406)
-- [ ] 习题 10-44 选整数(K-Multiple Free Set, UVa11246)
 - [ ] 习题 10-45 带符号二进制（ Power Signs, UVa11166）
 - [ ] 习题 10-47 随机数（ Randomness, UVa11429）
 - [ ] 习题 10-49 指数塔（ Exponential Towers, ACM/ ICPC NWERC 2013, UVa1656)
