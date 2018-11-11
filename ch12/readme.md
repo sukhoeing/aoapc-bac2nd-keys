@@ -6,21 +6,22 @@
 ## TODO
 
 ### 补充题解/证明
+- [ ] 例题 12- 4 UVa12161 Ironman Race in Treeland 树的分治
+- [ ] 例题 12- 6 UVa1674 Lightning Energy Report 树链剖分或LCA 
+- [ ] 例题 12- 7 UVa12538 Version Controlled IDE 可持久化treap/STL Rope
 
 ### 例题代码&题解
 - [ ] 例题 12- 1 UVa1671 History of Languages DFA 
 - [ ] 例题 12- 2 UVa1672 Disjoint Regular Expressions 正规 表达式； NFA 
 - [ ] 例题 12- 3 UVa1673 str2int DAWG( 或 后缀 自动机)
-- [ ] 例题 12- 4 UVa12161 Ironman Race in Treeland 树 的 分 治 
 - [ ] 例题 12- 5 UVa11994 Happy Painting Link- Cut 树 
-- [ ] 例题 12- 6 UVa1674 Lightning Energy Report 树 链 剖 分 或 LCA 
-- [ ] 例题 12- 7 UVa12538 Version Controlled IDE 可 持久 化 treap 
+
 - [ ] 例题 12- 8 UVa805 Polygon Intersections 多边形 交 
 - [ ] 例题 12- 9 UVa1675 Kingdom Reunion 扫描 法； DSLG 
 - [ ] 例题 12- 10 UVa12314 The Cleaning Robot 多边形 偏移 
 - [ ] 例题 12- 11 UVa1520 Flights 嵌套 线段 树； 扫描 法 
 - [ ] 例题 12- 12 UVa1676 GRE Words Revenge 数据 结构 的 组合； 分层 数据 结构； DAWG 的 综合 应用 
-- [ ] 例题 12- 13 UVa11998 Rujia Liu Loves Wario Land! 启发式 合并； 树 链 剖 分 的 综合 应用； 块 链 表
+- [ ] 例题 12- 13 UVa11998 Rujia Liu Loves Wario Land! 启发式 合并； 树链剖分的综合 应用； 块 链 表
 - [ ] 例题 12- 14 1UVa1104 Chips Challenge 网络 流 建模 
 - [ ] 例题 12- 15 UVa12567 Never7, Ever17 and Wa[ t] er 线性规划 
 - [ ] 例题 12- 16 UVa12110 Gargoyle 特殊 费用 流 或 线性规划 
