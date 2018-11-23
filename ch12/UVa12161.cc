@@ -1,5 +1,5 @@
 // LA4409 Ironman Race in Treeland
-// 陈锋
+// 吴鑫烜/陈锋
 #include <bitset>
 #include <cassert>
 #include <cstdio>
