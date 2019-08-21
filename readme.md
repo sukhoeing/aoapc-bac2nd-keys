@@ -33,17 +33,8 @@
 
 ## 比赛训练资源:
 
-### [NOIP训练资料](https://share.weiyun.com/d82d85cf1bac2e512e3fa34c6ddad714)
-- NOIP历年真题和数据
-- NOI历年真题和数据
-- APIO历年数据
-- CEOI历年真题和数据
-- NOIP百套模拟题
-- NOI年鉴
-- 冬令营历年题目和数据
-- CTSC历年数据
-- 国家集训队论文（按年份分类和按照专题分类两种)
-- NOI竞赛工具
+### OI公共图书馆
+https://github.com/sukhoeing/OI-Public-Library
 
 ### [《经典》UVa题目判题速度以及数据问题看这里!](misc/UVaTips.md)
 
