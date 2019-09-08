@@ -38,4 +38,8 @@ https://github.com/sukhoeing/OI-Public-Library
 
 ### [《经典》UVa题目判题速度以及数据问题看这里!](misc/UVaTips.md)
 
+### 算法竞赛知识点精讲
+https://e.vhall.com/user/home/39836526
+
+
 ### [勘误](misc/errata.md)
