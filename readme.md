@@ -34,6 +34,9 @@ https://space.bilibili.com/208090093
 - [2.7 第 9 章动态规划初步](ch09_examples/ch09_add_examples.pdf)
 - [2.8 第 10 章数学概念与方法](ch10_examples/ch10_add_examples.pdf)
 
+## 贡献代码目录
+- [贡献代码目录](contrib/readme.md)
+
 ## 比赛训练资源:
 
 ### OI公共图书馆
