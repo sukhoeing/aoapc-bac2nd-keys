@@ -1,23 +1,6 @@
 // UVa1654 Pairs of integers
 // 陈锋
-#include <cassert>
-#include <cmath>
-#include <cstdio>
-#include <cstdlib>
-#include <cstring>
-#include <ctime>
-#include <functional>
-#include <iomanip>
-#include <iostream>
-#include <list>
-#include <map>
-#include <queue>
-#include <set>
-#include <unordered_map>
-#include <unordered_set>
-#include <valarray>
-#include <vector>
-
+#include <bits/stdc++.h>
 using namespace std;
 #define _for(i, a, b) for (int i = (a); i < (b); ++i)
 #define _rep(i, a, b) for (int i = (a); i <= (b); ++i)
@@ -48,8 +31,6 @@ void solve(LL N, map<LL, LL>& ans) {
         if (y < -step * a) y += step * a, x -= step * b;
       }
       while (y < 0) y += a, x -= b;
-      // while (y >= P10[i]) y -= a, x += b;
-      // printf("i = %d, d = %d, x = %lld, y = %lld\n", i, d, x, y);
       if (y >= 0 && y < P10[i] && x >= 0 && x < P10[D - i - 1]) {
         LL X = x * P10[i + 1] + d * P10[i] + y, Y = x * P10[i] + y;
         if (X > Y && X + Y == N) ans[X] = Y;
@@ -77,4 +58,4 @@ int main() {
   }
   return 0;
 }
-// 2227129	2457	Pairs of integers	Accepted	C++11	0.000	2017-08-05 09:34:02
+// 2227129  2457  Pairs of integers Accepted  C++11 0.000 2017-08-05 09:34:02

@@ -1,37 +1,10 @@
 // UVa12558 Egyptian Fractions (HARD version)
 // 陈锋
-#include <cassert>
-#include <cmath>
-#include <cstdio>
-#include <cstdlib>
-#include <cstring>
-#include <ctime>
-#include <functional>
-#include <iomanip>
-#include <iostream>
-#include <list>
-#include <queue>
-#include <set>
-#include <unordered_map>
-#include <unordered_set>
-#include <valarray>
-#include <vector>
+#include <bits/stdc++.h>
 
 using namespace std;
-#define _for(i, a, b) for (int i = (a); i < (b); ++i)
+#define _for(i, a, b) for (int i = (a); i < (int)(b); ++i)
 #define _rep(i, a, b) for (int i = (a); i <= (b); ++i)
-typedef vector<int> IVec;
-template <typename T>
-inline vector<T>& operator+=(vector<T>& v, const T& x) {
-  v.push_back(x);
-  return v;
-}
-template <typename T>
-inline set<T>& operator+=(set<T>& s, const T& x) {
-  s.insert(x);
-  return s;
-}
-
 typedef long long LL;
 int A, B, K;
 unordered_set<int> R;
@@ -40,7 +13,7 @@ LL gcd(LL a, LL b) { return b == 0 ? a : gcd(b, a % b); }
 
 bool better(const vector<LL>& D, const vector<LL>& Ans) {
   if (Ans.empty()) return true;
-  int sz = D.size();
+  size_t sz = D.size();
   assert(sz == Ans.size());
   for (int i = sz - 1; i >= 0; i--)
     if (D[i] != Ans[i]) return D[i] < Ans[i];
@@ -67,7 +40,7 @@ void dfs(LL a, LL b, const int d, const int maxd, vector<LL>& D, vector<LL>& Ans
     if (a * B * deno + (maxd - d) * B * b < A * b * deno) break;
     if (!R.count(deno)) {
       LL na = a * deno + b, nb = b * deno, g = gcd(na, nb);
-      D += deno;
+      D.push_back(deno);
       dfs(na / g, nb / g, d + 1, maxd, D, Ans);
       D.pop_back();
     }
@@ -88,11 +61,12 @@ int main() {
       dfs(0, 1, 0, maxd, D, Ans);
       if (!Ans.empty()) {
         printf("Case %d: %d/%d=", t, A, B);
-        _for(i, 0, Ans.size()) printf("1/%lld%c", Ans[i], (i == Ans.size() - 1) ? '\n' : '+');
+        for (size_t i = 0; i < Ans.size(); i++)
+          printf("1/%lld%c", Ans[i], (i == Ans.size() - 1) ? '\n' : '+');
         break;
       }
     }
   }
   return 0;
 }
-// 19544890	12558	Egyptian Fractions (HARD version)	Accepted	C++11	6.610	2017-06-20 03:44:31
+// 19544890 12558 Egyptian Fractions (HARD version) Accepted  C++11 6.610 2017-06-20 03:44:31
