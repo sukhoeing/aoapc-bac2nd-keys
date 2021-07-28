@@ -1,67 +1,25 @@
 // Tree Recovery, ULM 1997, UVa 536
 // 陈锋
-#include<cassert>
-#include<cstdio>
-#include<cmath>
-#include<functional>
-#include<algorithm>
-#include<cstring>
-#include<stack>
+#include <iostream>
 using namespace std;
-
-const int MAXSIZE = 32;
-
-struct Node {
-    Node *left, *right;
-    char value;
-    
-    void init(char v) {
-        value = v;
-        left = right = NULL;
+string A, B; // pre order, in order
+void solve(int pL, int pR, int iL, int iR) {
+  if (pL == pR)
+    return;
+  int x = 0;
+  for (int i = iL; i < iR; i++)
+    if (B[i] == A[pL]) {
+      x = i;
+      break;
     }
-};
-
-Node nodesBuf[MAXSIZE];
-int cur;
-
-Node* newNode(){ return &(nodesBuf[cur++]); }
-
-Node* buildTree(const char *preord, const char *inord, int len) {
-    if(len == 0) return NULL;
-    char value = preord[0];
-    Node *root = newNode();
-    root->init(value);
-    if(len == 1) {
-        assert(value == inord[0]);
-        return root;
-    }
-    
-    const char *p = strchr(inord, value);
-    int lLen = p-inord;
-    int rLen = len - lLen - 1;
-    root->left = buildTree(preord+1, inord, lLen);
-    root->right = buildTree(preord+1+lLen, p+1, rLen);
-    return root;
+  solve(pL + 1, pL + 1 + x - iL, iL, x);
+  solve(pL + 1 + x - iL, pR, x + 1, iR);
+  cout << A[pL];
 }
-
-void postPrint(Node* root) {
-    if(root == NULL) return;
-    postPrint(root->left);
-    postPrint(root->right);
-    printf("%c", root->value);
+int main() {
+  ios::sync_with_stdio(false), cin.tie(0);
+  while (cin >> A >> B)
+    solve(0, A.size(), 0, B.size()), cout << endl;
+  return 0;
 }
-
-int main()
-{
-    char preord[MAXSIZE], inord[MAXSIZE];
-    while(scanf("%s %s", preord, inord) == 2) {
-        // printf("%s %s\n", preord, inord);
-        cur = 0;
-        Node* root = buildTree(preord, inord, strlen(inord));
-        postPrint(root);
-        puts("");
-    }
-    return 0;
-}
-
-// 14804429	536	Tree Recovery	Accepted	C++	0.015	2015-01-15 03:00:50
+// 2255 Accepted  360K  0MS G++ 1092B 2021-07-27 21:33:13
