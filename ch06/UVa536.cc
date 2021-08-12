@@ -1,17 +1,15 @@
 // Tree Recovery, ULM 1997, UVa 536
 // 陈锋
+#include <algorithm>
+#include <cassert>
 #include <iostream>
+#include <string>
 using namespace std;
 string A, B; // pre order, in order
 void solve(int pL, int pR, int iL, int iR) {
   if (pL == pR)
     return;
-  int x = 0;
-  for (int i = iL; i < iR; i++)
-    if (B[i] == A[pL]) {
-      x = i;
-      break;
-    }
+  int x = B.find(A[pL], iL);
   solve(pL + 1, pL + 1 + x - iL, iL, x);
   solve(pL + 1 + x - iL, pR, x + 1, iR);
   cout << A[pL];
