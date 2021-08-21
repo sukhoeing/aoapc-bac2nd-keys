@@ -1,41 +1,19 @@
 // UVa1632 Alibaba
 // 陈锋
-#include <bitset>
-#include <cassert>
-#include <climits>
 #include <cstdio>
-#include <cstdlib>
 #include <cstring>
-#include <ctime>
 #include <iostream>
-#include <list>
-#include <queue>
-#include <set>
-#include <sstream>
-#include <unordered_map>
-#include <unordered_set>
-#include <valarray>
-#include <vector>
-
 using namespace std;
-#define _for(i, a, b) for (int i = (a); i < (b); ++i)
-#define _rep(i, a, b) for (int i = (a); i <= (b); ++i)
-#define _zero(D) memset((D), 0, sizeof(D))
-#define _init(D, v) memset((D), (v), sizeof(D))
-#define _ri1(x) scanf("%d", &(x))
-#define _ri2(x, y) scanf("%d%d", &(x), &(y))
-#define _ri3(x, y, z) scanf("%d%d%d", &(x), &(y), &(z))
-#define _ri4(a, b, c, d) scanf("%d%d%d%d", &(a), &(b), &(c), &(d))
 typedef long long LL;
-
 const int MAXN = 10000 + 4, INF = 0x7f7f7f7f;
 int N, D[MAXN], T[MAXN];
 int DP[2][MAXN][2];
 
 int main() {
-  while (_ri1(N) == 1) {
-    _for(i, 0, N) _ri2(D[i], T[i]);
-    _zero(DP);
+
+  while (cin>>N) {
+    for(int i = 0; i < N; i++) cin>>D[i]>>T[i];
+    memset(DP, 0, sizeof(DP));
     int cur = 0;
     for (int i = N - 1; i >= 0; i--){ // cur:i cur^1 : i+1
       for (int j = i + 1; j < N; j++) {
